@@ -1,95 +1,34 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client'
+
+import Message from "@/components/Message"
+import Link from "next/link"
+import { useState } from "react"
 
 export default function Home() {
+  const [ message, setMessage ] = useState( <Message
+    handleFinish={ handleFinish }
+    texts={ [
+      'Olá meu amor, tudo bem?',
+      'Bom, eu estava muito em dúvida do que fazer para comemorar nosso aniversário de 2 anos de namoro, então resolvi fazer algo que eu sei que você vai gostar muito, um site para você, com muito amor e carinho, espero que goste :)',
+      'Esse site, na verdade, tem o intuíto de te perturbar um pouquinho KKKKKKKKKKKK',
+      'Preparei alguns desafios para você, e conforme você for passando, vai liberando algumas coisinhas para você, espero que goste S2',
+    ] }
+  /> )
+  const [ nextBtn, setNextBtn ] = useState( 'none' )
+
+  function handleFinish() {
+    setNextBtn( 'block' )
+  }
+
+  function nextPage() {
+    setNextBtn( 'block' )
+  }
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <main className='main'>
+      { message }
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <Link href={ 'd1' }><button style={ { display: nextBtn } }>Próximo</button></Link>
     </main>
   )
 }

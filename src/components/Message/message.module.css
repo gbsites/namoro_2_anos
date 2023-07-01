@@ -1,0 +1,30 @@
+.textDiv {
+    background-color: #ffffffc2;
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+    border-radius: 20px;
+    max-width: 90vw;
+    padding: 50px 100px;
+    transition-duration: .3s;
+
+    animation: Show 1s forwards;
+}
+
+@keyframes Show {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.continue {
+    color: #00000088;
+    font-weight: bold;
+}
