@@ -4,7 +4,8 @@ import Message from "@/components/Message"
 import Link from "next/link"
 import { useState } from "react"
 
-export default function Home() {
+export default function Home()
+{
   const [ message, setMessage ] = useState( <Message
     handleFinish={ handleFinish }
     texts={ [
@@ -16,11 +17,8 @@ export default function Home() {
   /> )
   const [ nextBtn, setNextBtn ] = useState( 'none' )
 
-  function handleFinish() {
-    setNextBtn( 'block' )
-  }
-
-  function nextPage() {
+  function handleFinish()
+  {
     setNextBtn( 'block' )
   }
 
