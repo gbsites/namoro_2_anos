@@ -25,24 +25,34 @@ input {
   animation-delay: .5s;
 }
 
+body,
+html {
+  overflow-x: hidden;
+}
+
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #CDB4DB;
+
+  /*Crie um background bonito com tons pastéis de roxo*/
+  background-image: linear-gradient(to right, #8675A9 0%, #C3AED6 100%);
   color: black;
 
   min-height: 100vh;
 }
 
-div {
-  margin: 20px;
+::-webkit-scrollbar {
+  width: 6px;
 }
 
-button,
-input {
-  margin-top: 10px;
-  margin-bottom: 10px;
+::-webkit-scrollbar-thumb {
+  background-color: #8675A9;
+}
+
+.bg_texture {
+  background-image: url('../../public/bg_texture.png');
+  background-size: 150px;
 }
 
 button {
@@ -50,24 +60,30 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
-  background-color: #ffffffb8;
+  background-color: #ffffffae;
 
+  width: 100%;
   border-radius: 10px;
-  padding: 10px 20px;
-  min-width: 100%;
+  padding: 15px 20px;
+
+  box-shadow: 0px 3px #8675A9;
 }
 
 button:hover {
-  background-color: #ffffff;
+  background-color: #dac8ea;
 }
 
 input {
   border: none;
   outline: none;
 
+  width: 100%;
+  font-size: 1.05em;
+  margin-bottom: 10px;
   padding: 10px 14px;
   border-radius: 10px;
-  min-width: 100%;
+
+  box-shadow: 0px 3px #8675A9;
 }
 
 a {
