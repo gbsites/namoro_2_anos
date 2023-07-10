@@ -8,10 +8,16 @@ export default function Home() {
   const [ message, setMessage ] = useState( <Message
     handleFinish={ handleFinish }
     texts={ [
-      'Olá meu amor, tudo bem?',
-      'Bom, eu estava muito em dúvida do que fazer para comemorar nosso aniversário de 2 anos de namoro, então resolvi fazer algo que eu sei que você vai gostar muito, um site para você, com muito amor e carinho, espero que goste :)',
-      'Esse site, na verdade, tem o intuíto de te perturbar um pouquinho KKKKKKKKKKKK',
-      'Preparei alguns desafios para você, e conforme você for passando, vai liberando algumas coisinhas para você, espero que goste S2',
+      'Olá amorrr, tudo bem?',
+      'Aqui estamos nós, mais um ano juntos, e eu não poderia estar mais feliz!',
+      'Estes 2 anos passaram voando, nem acredito que já faz tanto tempo desde o dia na Central',
+      'E talvez você esteja pensando: "Owwnt, ele fez um site pra mim com textinhos bonitinhos, que fofo!"',
+      'Bom... Esse site tem algumas coisinhas fofas para você sim...',
+      'MAAAASSSSS...',
+      'Você vai ter que desbloquear elas KKKKKKKKKKK',
+      'Para isso, preparei alguns desafios para você, e a cada desafio que você passar, uma coisinha fofa vai ser desbloqueada',
+      'Então, boa sorte KKKKKKKKKK',
+      'Clica no botão abaixo para começar!'
     ] }
   /> )
   const [ nextBtn, setNextBtn ] = useState( 'none' )

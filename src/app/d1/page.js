@@ -2,7 +2,7 @@
 
 import Message from "@/components/Message"
 import Link from "next/link"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function D1() {
     const [ inputs, setInputs ] = useState( "none" )
@@ -13,11 +13,15 @@ export default function D1() {
             key={ 0 }
             handleFinish={ () => setInputs( "block" ) }
             texts={ [
-                'Vamos começar bem fácil, ta bom?',
-                'Qual é o meu nome completo?'
+                'Esse é o primeiro desafio, então vou pegar leve com você...',
+                'Apenas digite o meu nome completo no campo abaixo e clique em confirmar',
             ] }
         />
     )
+
+    useEffect( () => {
+        localStorage.setItem( "stage", "1" )
+    } )
 
     function confirm() {
         if ( nameInput.toLowerCase() == 'edson gabriel moreira jacques' ) {
@@ -29,9 +33,10 @@ export default function D1() {
                         handleFinish={ () => setNextBtn( "block" ) }
                         texts={
                             [
-                                'Se errasse essa eu ia ficar muito triste, viu?',
-                                'Agora vamos continuar...',
-                                'A partir daqui, as coisas vão ficar um pouco mais difíceis...'
+                                'ACHO BOM, SE ERRASSE MEU NOME COMPLETO, EU IA FICAR BRAVO! >:(',
+                                'Enfim...',
+                                'PARABÉNS AMORECO, VOCÊ PASSOU NO PRIMEIRO DESAFIO!',
+                                'Só clicar no botão para seguir pro segundo desafio :)'
                             ] } />
                 </>
             )
@@ -44,10 +49,9 @@ export default function D1() {
                         handleFinish={ () => null }
                         texts={
                             [
-                                'a...',
-                                '...',
-                                '..',
-                                'Agora você me deixou triste...'
+                                'a',
+                                'Não acredito que errou meu nome :,(',
+                                'Mas vai, tenta de novo, uma hora você acerta... :(',
                             ] } />
                 </>
             )

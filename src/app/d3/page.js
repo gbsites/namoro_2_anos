@@ -15,16 +15,21 @@ export default function D2() {
             key={ 0 }
             handleFinish={ () => setButtonsDisplay( "flex" ) }
             texts={ [
-                'Bem vindo ao terceeeeeiirooooo desafio!',
-                'Bom, para esse desafio, vou querer testar sua paciência um pouquinho...',
-                '(ou sua sorte KKKKKKKKK)',
-                'Simplesmente ache o verdadeiro...',
-                'MUAHAHAHAHAHAHAHAHAHA (risada maléfica)',
+                'Olha só, já está no terceiro desafioooo moo',
+                'Duas palavras para você...',
+                'Para',
+                'Béns',
+                'Enfim...',
+                'Nesse terceiro desafio, vou testar sua paciência (ou sorte)',
+                'Como você gosta bastante de Naruto...',
+                'VAI TER QUE ACHAR O VERDADEIRO NARUTO',
+                'KAGE BUNSHIN NO JUTSU',
             ] }
         />
     )
 
     useEffect( () => {
+        localStorage.setItem( "stage", "3" )
         sessionStorage.setItem( "randomNumber", Math.floor( Math.random() * 72 ) )
     }, [] )
 
@@ -34,7 +39,7 @@ export default function D2() {
         console.log( i )
 
         if ( i === Number( randomNumber ) ) {
-            target_btn.style.backgroundColor = "#b4f2e1"
+            target_btn.style.backgroundColor = "#f2e9b4"
 
             setTimeout( () => {
                 setMessage(
@@ -48,7 +53,7 @@ export default function D2() {
                             'PARABÉNS, VOCÊ CONSEGUIIIIIIIUUUUU',
                             'Perdeu muito tempo aqui? KKKKKKK',
                             'Se achou fácil, calma que vai piorar, confia no pai',
-                            'Mas agora você pode ir para o próximo desafio',
+                            'Pode ir para o quarto desafioooo',
                         ] }
                     />
                 )
@@ -57,14 +62,15 @@ export default function D2() {
             }, 1000 )
 
         } else {
-            target_btn.style.backgroundColor = "#f2b4b4"
+            target_btn.style.display = 'none'
 
             setMessage(
                 <Message
                     key={ Math.random() }
                     handleFinish={ () => console.log( "finish" ) }
                     texts={ [
-                        'ERROOOOUUUUUUUU'
+                        'Puff...',
+                        'Naruto errado'
                     ] }
                 />
             )
@@ -77,7 +83,7 @@ export default function D2() {
 
             <div style={ { display: buttonsDisplay } } className={ styles.buttons }>
                 {
-                    Array( 72 ).fill( 'Kage Bunshin no Jutsu' ).map( ( text, index ) => (
+                    Array( 72 ).fill( 'Naruto' ).map( ( text, index ) => (
                         <div
                             key={ "btn" + index }
                             className={ styles.button }>

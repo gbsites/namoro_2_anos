@@ -22,6 +22,10 @@ button,
 input {
   opacity: 0;
   animation: Show 1s forwards;
+}
+
+.main button,
+.main input {
   animation-delay: .5s;
 }
 
@@ -43,16 +47,18 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #8675A9;
+  background-color: #e9e9e9;
 }
 
 .bg_texture {
   background-image: url('../../public/bg_texture.png');
+
   background-size: 150px;
+  min-height: 100vh;
 }
 
 button {
@@ -95,8 +101,9 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 
   width: 100vw;
-  height: 100vh;
-  padding-top: 100px;
+  height: 85vh;
+  padding-top: 50px;
 }
